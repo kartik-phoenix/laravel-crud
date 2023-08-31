@@ -18,7 +18,6 @@ class SchoolStatus
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
               // Database configuration
                 $databaseConfig = [
                     'driver' => 'mysql',
