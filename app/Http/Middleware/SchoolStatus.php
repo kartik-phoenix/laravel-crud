@@ -30,7 +30,7 @@ class SchoolStatus
                 ];
 
                 // // Establish the database connection
-                $dbConnection = DB::connection('');
+                $dbConnection = DB::connection('mysql_master');
                 $dbConnection->setPdo(new PDO(
                     "{$databaseConfig['driver']}:host={$databaseConfig['host']};port={$databaseConfig['port']};dbname={$databaseConfig['database']}",
                     $databaseConfig['username'],
