@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
+use Spatie\Image\Image as SpatieImage;
 
 class SettingController extends Controller
 {
@@ -103,6 +105,28 @@ class SettingController extends Controller
                     $setting->message = $request->file('logo2')->store('logo', 'public');
                     $setting->save();
                 }
+
+                if ($request->logo2->getClientMimeType() == 'image/svg+xml') {
+                    // $svg = file_get_contents($request->logo2);
+                    // dd($svg);
+                    // $image = Image::make($request->logo2);
+                    // $image = SpatieImage::load($request->logo2);
+                    // $image->width(300)->height(200);
+                    // $image->format('png')->save(public_path());
+
+                    // dd($image);
+                    // dd($image, 12);
+                    // $response = array(
+                    //     'error' => true,
+                    //     'message' => "Image type svg not allowed",
+                    // );
+                    // return response()->json($response);
+                }
+                else{
+                    $image = Image::make($request->logo2)->encode('png');
+                    // dd($image);
+                    $image->save(public_path('/appLogo.png'));
+                }
             }
             if ($request->hasFile('favicon')) {
                 if (Settings::where('type', 'favicon')->exists()) {
@@ -139,6 +163,7 @@ class SettingController extends Controller
                 );
             }
         } catch (Throwable $e) {
+            // throw $e;
             $response = array(
                 'error' => true,
                 'message' => trans('error_occurred'),
