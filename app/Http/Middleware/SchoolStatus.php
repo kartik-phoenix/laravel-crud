@@ -18,6 +18,7 @@ class SchoolStatus
      */
     public function handle(Request $request, Closure $next)
     {
+        // return $next($request);
               // Database configuration
                 $databaseConfig = [
                     'driver' => 'mysql',
@@ -38,6 +39,7 @@ class SchoolStatus
                 ));
 
                 $checkstatus = $dbConnection->table('master_schools')->where('school_dir', base_path())->first();
+                dd($checkstatus);
                 if($checkstatus->status == 0){
                     abort(403, 'In-Active');
                 }
