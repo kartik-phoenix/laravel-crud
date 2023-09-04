@@ -1155,7 +1155,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `email`, `fcm_id`, `email_verified_at`, `password`, `mobile`, `image`, `dob`, `current_address`, `permanent_address`, `status`, `reset_request`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Phoenix', 'Admin', 'male', 'superadmin@gmail.com', NULL, NULL, '$2y$10$CX8NYDJ7pj66eJx3fFQ9v.0hATHSOpbK2VlPPsEseXtX5Qdfr/F0i', '9898125075', 'user/UvlxZleDkdC5Io8NWyTaw8TerZjGI1o916sgcSir.svg', '1970-01-01', 'Drivein Road, Ahmedabad', 'Drivein Road, Ahmedabad', 1, 0, NULL, '2023-08-30 23:44:23', '2023-08-30 23:46:54', NULL);
+(1, 'Phoenix', 'Admin', 'male', 'admin@gmail.com', NULL, NULL, '$2y$10$Dd3spuACpQs1vG1933/nk.krd0sOW/adeClfNwUdW4VUpDjCHKXN6', '9898125075', 'user/UvlxZleDkdC5Io8NWyTaw8TerZjGI1o916sgcSir.svg', '1970-01-01', 'Drivein Road, Ahmedabad', 'Drivein Road, Ahmedabad', 1, 0, NULL, '2023-08-30 23:44:23', '2023-08-30 23:46:54', NULL);
 
 --
 -- Indexes for dumped tables
